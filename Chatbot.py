@@ -8,8 +8,7 @@ import os
 #     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
 #     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-os.environ["openai_api_key"] = "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"
-
+os.environ["openai_api_key"] = "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"
 st.title("💬 CustDev")
 
 """Добро пожаловать в нашу CustDev сессию! Мы рады видеть вас здесь, так как ваше мнение и опыт важны для нас.
