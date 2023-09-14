@@ -8,7 +8,7 @@ import os
 #     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
 #     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-os.environ["openai_api_key"] = "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"
+os.environ["openai_api_key"] = "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"
 
 st.title("💬 CustDev")
 
