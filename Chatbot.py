@@ -1,14 +1,13 @@
 import openai
 import streamlit as st
 import os
-
+from config import openai_api_key
 # with st.sidebar:
 #     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
 #     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
 #     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
 #     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-os.environ["openai_api_key"] = "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"
 st.title("💬 CustDev")
 
 """Добро пожаловать в нашу CustDev сессию! Мы рады видеть вас здесь, так как ваше мнение и опыт важны для нас.
@@ -29,11 +28,11 @@ st.session_state.messages.append({"role": "user", "content": "Я хочу, чт�
 
 
 if prompt := st.chat_input():
-    if not os.environ.get("openai_api_key"):
-        st.info("Please add your OpenAI API key to continue.")
-        st.stop()
+    # if not openai_api_key:
+    #     st.info("Please add your OpenAI API key to continue.")
+    #     st.stop()
 
-    openai.api_key = os.environ.get("openai_api_key")
+    openai.api_key = openai_api_key
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
     response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=st.session_state.messages)
