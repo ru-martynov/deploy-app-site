@@ -7,7 +7,7 @@ import streamlit as st
 #     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
 #     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-openai_api_key = "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"
+openai_api_key = "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"
 
 
 st.title("💬 CustDev")
