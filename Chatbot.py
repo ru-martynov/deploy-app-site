@@ -8,7 +8,7 @@ import os
 #     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
 #     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-os.environ["openai_api_key"] = "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"
+os.environ["openai_api_key"] = "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"
 
 st.title("💬 CustDev")
 
@@ -30,11 +30,11 @@ st.session_state.messages.append({"role": "user", "content": "Я хочу, чт�
 
 
 if prompt := st.chat_input():
-    if not openai_api_key:
+    if not os.environ.get("openai_api_key"):
         st.info("Please add your OpenAI API key to continue.")
         st.stop()
 
-    openai.api_key = openai_api_key
+    openai.api_key = os.environ.get("openai_api_key")
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
     response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=st.session_state.messages)
